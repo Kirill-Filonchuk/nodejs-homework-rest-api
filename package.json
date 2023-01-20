@@ -1,7 +1,8 @@
 {
-  "name": "template",
+  "name": "nodejs-hw-rest-api",
   "version": "0.0.0",
   "private": true,
+  "author": "Kirill Filonchuk <kir.realtor@gmail.com>",
   "scripts": {
     "start": "cross-env NODE_ENV=production node ./server.js",
     "start:dev": "cross-env NODE_ENV=development nodemon ./server.js",
