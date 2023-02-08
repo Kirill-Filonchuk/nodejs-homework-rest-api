@@ -1,7 +1,7 @@
 const { Contact } = require("../../models/contacts");
 const { HttpError } = require("../../helpers");
 
-const updateById = async (req, res, next) => {
+const updateFavorite = async (req, res) => {
   const { contactId } = req.params;
   const result = await Contact.findByIdAndUpdate(contactId, req.body, {
     new: true,
@@ -9,8 +9,7 @@ const updateById = async (req, res, next) => {
   if (!result) {
     throw HttpError(404, "Not found");
   }
-
-  res.json(result);
+  res.status(201).json(result);
 };
 
-module.exports = updateById;
+module.exports = updateFavorite;
