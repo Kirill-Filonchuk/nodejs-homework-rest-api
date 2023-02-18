@@ -25,6 +25,11 @@ const authenticate = async (req, res, next) => {
     }
     const { id } = jwt.verify(token, SECRET_KEY);
     const user = await User.findById(id);
+
+    if (!(token === user.token)) {
+      throw HttpError(401, "ATENTION!! Replacement TOKEN");
+    }
+
     if (!user || !user.token) {
       // || !user.token - когда пользователь разлогинился его token=null
       throw HttpError(401, "Unauthorized. Not authorized");

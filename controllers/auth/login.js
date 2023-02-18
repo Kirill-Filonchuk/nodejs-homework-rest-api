@@ -7,6 +7,7 @@ const { HttpError } = require("../../helpers");
 const login = async (req, res) => {
   const { email, password } = req.body;
   const user = await User.findOne({ email });
+  console.log(user.comparePassword(password));
   if (!user || !user.comparePassword(password)) {
     throw HttpError(401, "Unauthorized. Email or password is wrong");
   }
