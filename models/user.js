@@ -19,6 +19,10 @@ const userSchema = new Schema(
       enum: ["starter", "pro", "business"],
       default: "starter",
     },
+    token: {
+      type: String,
+      default: null,
+    },
   },
   {
     versionKey: false,
@@ -45,6 +49,10 @@ const joiLoginSchema = Joi.object({
   password: Joi.string().min(3).required(),
 });
 
+const joiUpdateSubscriptionSchema = Joi.object({
+  subscription: Joi.string().valid("starter", "pro", "business"),
+});
+
 userSchema.post("save", handleMongooseError);
 const User = model("user", userSchema);
 
@@ -52,6 +60,7 @@ module.exports = {
   User,
   joiRegisterSchema,
   joiLoginSchema,
+  joiUpdateSubscriptionSchema,
 };
 // {
 //   password: {
@@ -68,8 +77,8 @@ module.exports = {
 //     enum: ["starter", "pro", "business"],
 //     default: "starter"
 //   },
-//   token: {
-//     type: String,
-//     default: null,
-//   },
+// token: {
+//   type: String,
+//   default: null,
+// },
 // }
