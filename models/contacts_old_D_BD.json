@@ -1,0 +1,92 @@
+[
+    {
+        "_id": "63e238eba61e45761ad9ec46",
+        "name": "Allen Raymond",
+        "email": "nulla.ante@vestibul.co.uk",
+        "phone": "(992) 914-3792",
+        "favorite": true,
+        "updatedAt": "2023-02-08T18:36:11.965Z"
+    },
+    {
+        "_id": "63e238eba61e45761ad9ec47",
+        "name": "Chaim Lewis",
+        "email": "dui.in@egetlacus.ca",
+        "phone": "(294) 840-6685",
+        "favorite": true
+    },
+    {
+        "_id": "63e238eba61e45761ad9ec48",
+        "name": "Kennedy Lane",
+        "email": "mattis.Cras@nonenimMauris.net",
+        "phone": "(542) 451-7038",
+        "favorite": false
+    },
+    {
+        "_id": "63e238eba61e45761ad9ec49",
+        "name": "Wylie Pope",
+        "email": "est@utquamvel.net",
+        "phone": "(692) 802-2949",
+        "favorite": true
+    },
+    {
+        "_id": "63e238eba61e45761ad9ec4a",
+        "name": "Cyrus Jackson",
+        "email": "nibh@semsempererat.com",
+        "phone": "(501) 472-5218",
+        "favorite": true
+    },
+    {
+        "_id": "63e238eba61e45761ad9ec4b",
+        "name": "Abbot Franks",
+        "email": "scelerisque@magnis.org",
+        "phone": "(186) 568-3720",
+        "favorite": true
+    },
+    {
+        "_id": "63e238eba61e45761ad9ec4c",
+        "name": "Reuben Henry",
+        "email": "pharetra.ut@dictum.co.uk",
+        "phone": "(715) 598-5792",
+        "favorite": true
+    },
+    {
+        "_id": "63e238eba61e45761ad9ec4d",
+        "name": "Simon Morton",
+        "email": "dui.Fusce.diam@Donec.com",
+        "phone": "(233) 738-2360",
+        "favorite": true
+    },
+    {
+        "_id": "63e238eba61e45761ad9ec4e",
+        "name": "Thomas Lucas",
+        "email": "nec@Nulla.com",
+        "phone": "(704) 398-7993",
+        "favorite": true,
+        "updatedAt": "2023-02-08T18:27:32.967Z"
+    },
+    {
+        "_id": "63e238eba61e45761ad9ec4f",
+        "name": "Alec Howard",
+        "email": "Donec.elementum@scelerisquescelerisquedui.net",
+        "phone": "(748) 206-2688",
+        "favorite": true
+    },
+    {
+        "_id": "63e3e61b3850a8a8fb313bc2",
+        "name": "ymond",
+        "email": "nte@vestibul.co.uk",
+        "phone": "(888) 914-3792",
+        "favorite": true,
+        "createdAt": "2023-02-08T18:12:43.632Z",
+        "updatedAt": "2023-02-08T18:28:43.942Z"
+    },
+    {
+        "_id": "63e3f41ca13f95694e2eb83b",
+        "name": "NOTond",
+        "email": "NOTte@vestibul.co.uk",
+        "phone": "(988) 914-3792",
+        "favorite": false,
+        "createdAt": "2023-02-08T19:12:28.750Z",
+        "updatedAt": "2023-02-08T19:12:28.750Z"
+    }
+]
