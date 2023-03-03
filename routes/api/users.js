@@ -8,7 +8,12 @@ const {
 } = require("../../models/user");
 
 const { ctrlWrapper } = require("../../helpers");
-const { validateBody, authenticate, upload } = require("../../middlewares");
+const {
+  validateBody,
+  authenticate,
+  upload,
+  // resizeAvatar,
+} = require("../../middlewares");
 
 router.post(
   "/signup",
@@ -34,6 +39,7 @@ router.patch(
   "/avatars",
   authenticate,
   upload.single("avatar"),
+  // resizeAvatar,
   ctrlWrapper(users.updateAvatar)
 );
 
