@@ -2,7 +2,7 @@ const mongoose = require("mongoose");
 require("dotenv").config();
 const path = require("path");
 const fs = require("fs/promises");
-const { PORT, DB_HOST, UPLOADS_DIR } = process.env;
+const { PORT, DB_HOST, UPLOADS_DIR, DB_HOST_TEST } = process.env;
 const uploadDir = path.join(process.cwd(), UPLOADS_DIR); // temp
 // const storeImage = path.join(process.cwd(), STORE_DIR); // publick
 
