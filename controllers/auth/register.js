@@ -1,4 +1,6 @@
 // const bcrypt = require("bcryptjs");
+const gravatar = require("gravatar");
+
 const { User } = require("../../models/user");
 const { HttpError } = require("../../helpers");
 
@@ -9,8 +11,13 @@ const register = async (req, res) => {
     throw HttpError(409, "Conflict. Email in use");
   }
 
+  const optionsGravatar = {
+    size: 250,
+    d: "identicon",
+  };
+  const avatarURL = gravatar.url(email, optionsGravatar);
   // Используем модель, как функцию-конструктор/ т.е С помощью модели создаюю объект (экземпляр), который я хочу сохранить в БД
-  const newUser = new User({ email, subscription });
+  const newUser = new User({ email, subscription, avatarURL });
   newUser.setPassword(password);
   newUser.save(); // сохраняю в БД
   //   const hashPassword = bcrypt.hashSync(password, bcrypt.genSaltSync(10));
@@ -19,6 +26,7 @@ const register = async (req, res) => {
   //     subscription,
   //     password: hashPassword,
   //   });
+
   res.status(201).json({
     status: "success",
     code: 201,
@@ -27,6 +35,7 @@ const register = async (req, res) => {
         email: newUser.email,
         subscription,
         password: newUser.password,
+        avatarURL,
       },
     },
   });

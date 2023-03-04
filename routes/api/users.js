@@ -8,7 +8,12 @@ const {
 } = require("../../models/user");
 
 const { ctrlWrapper } = require("../../helpers");
-const { validateBody, authenticate } = require("../../middlewares");
+const {
+  validateBody,
+  authenticate,
+  upload,
+  // resizeAvatar,
+} = require("../../middlewares");
 
 router.post(
   "/signup",
@@ -25,6 +30,17 @@ router.patch(
   authenticate,
   validateBody(joiUpdateSubscriptionSchema),
   ctrlWrapper(users.updateSubscription)
+);
+
+/* маршрут для изменения аватара по-умолчанию (fields in form - req.body - в поле запроса ожидаем поле "avatar", файл - одиг)
+Благодаря миддлваре upload файл попадет во временную папку temp, а далее благодаря updateAvatar он перенесется при сохранении в основную папку - раздача static - public/avatar
+*/
+router.patch(
+  "/avatars",
+  authenticate,
+  upload.single("avatar"),
+  // resizeAvatar,
+  ctrlWrapper(users.updateAvatar)
 );
 
 module.exports = router;
