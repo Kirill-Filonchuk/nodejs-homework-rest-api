@@ -3,6 +3,7 @@ const router = express.Router();
 const { auth: ctrl, users } = require("../../controllers");
 const {
   joiRegisterSchema,
+  joiRepeatedSchema,
   joiLoginSchema,
   joiUpdateSubscriptionSchema,
 } = require("../../models/user");
@@ -21,6 +22,14 @@ router.post(
   ctrlWrapper(ctrl.register)
 );
 
+router.get("/verify/:verificationToken", ctrlWrapper(ctrl.verify));
+// Маршрут на повторную отправку письма для верификации почты - тело запроса - только email
+router.post(
+  "/verify",
+  validateBody(joiRepeatedSchema),
+  ctrlWrapper(ctrl.resentVerifyEmail)
+);
+// Login
 router.post("/login", validateBody(joiLoginSchema), ctrlWrapper(ctrl.login));
 // authenticate - Делает аналог приватного роута
 router.get("/current", authenticate, ctrlWrapper(users.getCurrent));
@@ -34,6 +43,7 @@ router.patch(
 
 /* маршрут для изменения аватара по-умолчанию (fields in form - req.body - в поле запроса ожидаем поле "avatar", файл - одиг)
 Благодаря миддлваре upload файл попадет во временную папку temp, а далее благодаря updateAvatar он перенесется при сохранении в основную папку - раздача static - public/avatar
+field in form - avatar
 */
 router.patch(
   "/avatars",

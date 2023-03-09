@@ -20,7 +20,7 @@ describe("login", () => {
 
   it("should register NewUser", async () => {
     const response = await supertest(app).post("/api/users/signup").send({
-      email: "user2@mail.com",
+      email: "afa3@ukr.net",
       password: "123456",
     });
 
@@ -29,7 +29,7 @@ describe("login", () => {
 
   it("should login user, that present in DB - /login", async () => {
     const response = await supertest(app).post("/api/users/login").send({
-      email: "user2@mail.com",
+      email: "afa3@ukr.net",
       password: "123456",
     });
 
@@ -40,7 +40,7 @@ describe("login", () => {
         token: expect.any(String),
 
         user: {
-          email: "user2@mail.com",
+          email: "afa3@ukr.net",
           subscription: expect.any(String),
         },
       },

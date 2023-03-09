@@ -12,7 +12,7 @@ const { schemas } = require("../../models/contact");
 
 router.get("/", authenticate, ctrlWrapper(ctrl.getAll));
 
-router.get("/:contactId", isValidId, ctrlWrapper(ctrl.getById));
+router.get("/:contactId", authenticate, isValidId, ctrlWrapper(ctrl.getById));
 
 router.post(
   "/",
@@ -31,6 +31,11 @@ router.patch(
   ctrlWrapper(ctrl.updateFavorite)
 );
 
-router.delete("/:contactId", isValidId, ctrlWrapper(ctrl.removeById));
+router.delete(
+  "/:contactId",
+  authenticate,
+  isValidId,
+  ctrlWrapper(ctrl.removeById)
+);
 
 module.exports = router;

@@ -9,7 +9,6 @@ const avatarsDir = path.join(__dirname, "..", "..", "public", "avatars");
 console.log(avatarsDir);
 
 const updateAvatar = async (req, res) => {
-  //   console.log(req.file);
   const { path: tempUploud, originalname } = req.file;
   const { _id } = req.user;
   console.log(_id, "<_________");
