@@ -1,3 +1,4 @@
+// Work without  email confirm
 require("dotenv").config();
 const mongoose = require("mongoose");
 const supertest = require("supertest");
